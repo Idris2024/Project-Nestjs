@@ -1,12 +1,22 @@
 import Book from '../entities/book.entity';
 import { AvailabilityStatus } from 'src/enum/availability.enum';
 import BookInventoryBooks from 'src/entities/book_inventory_books.entity';
-export const users = [];import Category from 'src/entities/category.entity';
+import LibraryInventory from 'src/entities/book_inventory.entity';
+import Category from 'src/entities/category.entity';
+import { InventoryType } from 'src/enum/type';
+import BorrowedBook from 'src/entities/borrowed_book.entity';
+
+
+
+
+
+// In-memory list of users
+export const users = [];
 
 // In-memory list of books
 export const book: Book[] = [
     {
-        id: 1,
+        bookId: 1,
         title: "To Kill a Mockingbird",
         categoryId: 1,
         author: "Harper Lee",
@@ -14,7 +24,7 @@ export const book: Book[] = [
         publication_year: 1960
     },
     {
-        id: 2,
+        bookId: 2,
         title: "1984",
         categoryId: 2,
         author: "George Orwell",
@@ -22,7 +32,7 @@ export const book: Book[] = [
         publication_year: 1949
     },
     {
-        id: 3,
+        bookId: 3,
         title: "Pride and Prejudice",
         categoryId: 1,
         author: "Jane Austen",
@@ -30,7 +40,7 @@ export const book: Book[] = [
         publication_year: 1813
     },
     {
-        id: 4,
+        bookId: 4,
         title: "The Great Gatsby",
         categoryId: 1,
         author: "F. Scott Fitzgerald",
@@ -38,7 +48,7 @@ export const book: Book[] = [
         publication_year: 1925
     },
     {
-        id: 5,
+        bookId: 5,
         title: "Moby-Rick",
         categoryId: 3,
         author: "Herman Melville",
@@ -46,7 +56,7 @@ export const book: Book[] = [
         publication_year: 1851
     },
     {
-        id: 6,
+        bookId: 6,
         title: "1984",
         categoryId: 2,
         author: "George Orwell",
@@ -54,7 +64,7 @@ export const book: Book[] = [
         publication_year: 1949
     },
     {
-        id: 7,
+        bookId: 7,
         title: "Moby-Rick",
         categoryId: 3,
         author: "Herman Melville",
@@ -91,12 +101,12 @@ export let bookInventoryBooks : BookInventoryBooks[] = [
     {
         bookId: 1,
         bookInventoryId: 1,
-        availability_status: AvailabilityStatus.BORROWED
+        availability_status: AvailabilityStatus.AVAILABLE
     },
     {
         bookId: 2,
         bookInventoryId: 1,
-        availability_status: AvailabilityStatus.BORROWED
+        availability_status: AvailabilityStatus.AVAILABLE
     },
     {
         bookId: 3,
@@ -124,3 +134,13 @@ export let bookInventoryBooks : BookInventoryBooks[] = [
         availability_status: AvailabilityStatus.AVAILABLE
     }
 ];
+export const booksInventory : LibraryInventory[] = [
+    {
+        name: 'bookInventory',
+        type: InventoryType.Book,
+        quantity: 7,
+    }
+];
+
+
+export const borrowedBooks: BorrowedBook[] = [];

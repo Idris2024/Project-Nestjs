@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export default class Book {
-    id: number;
+    bookId: number;
     title: string;
     categoryId: number;
     author: String;
@@ -10,7 +10,7 @@ export default class Book {
     publication_year: Number
 
     constructor(title:string, categoryId:number, author:string, description:string, publication_year:Number){
-        this.id = 0;
+        this.bookId = 0;
         this.title = title;
         this.categoryId = categoryId;
         this.author = author;

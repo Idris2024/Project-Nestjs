@@ -8,8 +8,9 @@ export class BookApiService {
     getBook() {
         return (book);
       }
+      // getBookById
     async getBookById(bookId: number) {
-        const existingBook = book.find((b) => b.id.toString() === bookId.toString() || b.categoryId.toString() === bookId.toString());
+        const existingBook = book.find((b) => b.bookId.toString() === bookId.toString() || b.categoryId.toString() === bookId.toString());
         
         if (!existingBook) {
           throw new HttpException('Book not found!', HttpStatus.NOT_FOUND);
